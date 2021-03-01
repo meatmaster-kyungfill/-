@@ -16,7 +16,8 @@ https://www.edaily.co.kr/news/read?newsid=01410406615800016
 구매후기로 부터 구매이력을 얻어내기 위해서는 재구매율이 상당히 높은 상품이어야 한다.   
 금천미트는 육가공 B2B 유통 1위 온라인몰으로써 B2B 업계 특성상 고객이신 사장님들의 재구매율이 상당히 높다.   
 따라서 구매후기를 바탕으로 구매이력을 추정할 수 있었고 이를 바탕으로 장바구니분석(상품연관분석)을 진행하였다.
-
+![image](https://user-images.githubusercontent.com/71205453/109499868-c74a6c00-7ad8-11eb-9359-22cc16f9debc.png)
+## 3. 장바구니 분석을 위한 데이터 전처리
 ![image](https://user-images.githubusercontent.com/71205453/109490889-366d9380-7acc-11eb-8495-595c6f442f4f.png)
 
 <div class="output_subarea output_html rendered_html output_result" dir="auto"><div>
