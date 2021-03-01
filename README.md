@@ -1,17 +1,24 @@
 # Geumcheon-Meat 장바구니 분석
+![image](https://user-images.githubusercontent.com/71205453/109490613-cd861b80-7acb-11eb-8ef0-0bbd0bcc5fc5.png)
 
 ## 1. 장바구니 분석(연관규칙 분석)이란?
-두 개 이상의 거래나 사건에 포함되어 있는 항목(아이템)들 간의 관련성을 파악하는 방법이다.
+두 개 이상의 거래나 사건에 포함되어 있는 항목(아이템)들 간의 관련성을 파악하는 방법입니다.   
 이를 고객이 구매한 상품 항목에 적용할 경우 장바구니 분석이라 부르며 다음과 같이 표현 할 수 있습니다.
 
-**품목 A를 구매하는 경우는 품목 B도 구매한다.**
+**"품목 A를 구매하는 경우는 품목 B도 구매한다."**
+
+-장바구니 분석의 실제 적용 예-   
+맥주는 왜 기저귀 옆에 있을까? 출처: 이데일리   
+https://www.edaily.co.kr/news/read?newsid=01410406615800016
+
+### 2. 금천미트 구매후기를 데이터셋으로 선정한 이유
 
 해당 금천미트 구매후기를 바탕으로한 장바구니 분석
 구매후기 데이터를 얻은 금천미트
 금천미트는 B2B 온라인몰으로써 회원들의 재구매율이 상당히 높다.
 따라서 재구매 내역을 바탕으로 구매이력을 추정할 수 있었고
 이러한 구매이력을 바탕으로 장바구니분석(상품연관분석)을 진행하였다.
-![image](https://user-images.githubusercontent.com/71205453/109490613-cd861b80-7acb-11eb-8ef0-0bbd0bcc5fc5.png)
+
 ![image](https://user-images.githubusercontent.com/71205453/109490889-366d9380-7acc-11eb-8495-595c6f442f4f.png)
 
 <div class="output_subarea output_html rendered_html output_result" dir="auto"><div>
