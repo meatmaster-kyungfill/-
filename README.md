@@ -218,11 +218,10 @@ https://www.edaily.co.kr/news/read?newsid=01410406615800016
   </tbody>
 </table>
 </div></div>
-![image](https://user-images.githubusercontent.com/71205453/109663424-6e99d280-7baf-11eb-93a3-4ccf98b9f901.png)
+
+![image](https://user-images.githubusercontent.com/71205453/109664856-efa59980-7bb0-11eb-9c91-511c14fc3f76.png)
 
 <div class="output_subarea output_html rendered_html output_result" dir="auto"><div>
-<style scoped="">
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -422,4 +421,4 @@ https://www.edaily.co.kr/news/read?newsid=01410406615800016
   </tbody>
 </table>
 </div></div>
-![image](https://user-images.githubusercontent.com/71205453/109664638-ae14ee80-7bb0-11eb-86db-a3d3ca1ddad4.png)
+
