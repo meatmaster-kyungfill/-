@@ -29,10 +29,196 @@ https://www.edaily.co.kr/news/read?newsid=01410406615800016
 <p align="center"> 금천미트에서 구매빈도가 높은 상위 50 부위</p>
   
 ![image](https://user-images.githubusercontent.com/71205453/109490889-366d9380-7acc-11eb-8495-595c6f442f4f.png)
+<div class="output_subarea output_html rendered_html output_result" dir="auto"><div>
+<p align="center"> 상위 50가지 부위만 나타낸 구매 후기</p>   
+  
+  
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>번호</th>
+      <th>상품</th>
+      <th>만족도</th>
+      <th>날짜</th>
+      <th>내용</th>
+      <th>작성자</th>
+      <th>부위</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>110763</td>
+      <td>보리돈(Lethbridge)/냉장/삼겹살</td>
+      <td>만족도5.0</td>
+      <td>2021-02-28</td>
+      <td>배송잘받았 습니다</td>
+      <td>eli******</td>
+      <td>삼겹살</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>110758</td>
+      <td>금천한우거세/냉장/앞다리살/1++</td>
+      <td>만족도5.0</td>
+      <td>2021-02-28</td>
+      <td>조아요</td>
+      <td>545********</td>
+      <td>앞다리살</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>110757</td>
+      <td>엑셀(Excel)/냉장/알목심/PR</td>
+      <td>만족도5.0</td>
+      <td>2021-02-28</td>
+      <td>마블도 괜찮고 좋아요~</td>
+      <td>par*****</td>
+      <td>알목심</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>110756</td>
+      <td>금천한돈/냉장/미박앞다리(암)</td>
+      <td>만족도5.0</td>
+      <td>2021-02-28</td>
+      <td>잘썻습니다~~~~~~~~</td>
+      <td>ssp******</td>
+      <td>미박앞다리(암)</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>110755</td>
+      <td>금천한우암소/냉동/사골/2</td>
+      <td>만족도5.0</td>
+      <td>2021-02-28</td>
+      <td>굿</td>
+      <td>jin*****</td>
+      <td>사골</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9987</th>
+      <td>100779</td>
+      <td>금천한돈/냉장/미박삼겹(암)</td>
+      <td>만족도3.0</td>
+      <td>2020-09-09</td>
+      <td>삼겹살이 요즘 작은것만 나오네요</td>
+      <td>lem*******</td>
+      <td>미박삼겹(암)</td>
+    </tr>
+    <tr>
+      <th>9988</th>
+      <td>100778</td>
+      <td>황제유황돼지/냉장/항정</td>
+      <td>만족도3.0</td>
+      <td>2020-09-09</td>
+      <td>고기값이  또 오르기 시작</td>
+      <td>lem*******</td>
+      <td>항정</td>
+    </tr>
+    <tr>
+      <th>9992</th>
+      <td>100774</td>
+      <td>금천한돈/냉장/미박앞다리(암)</td>
+      <td>만족도5.0</td>
+      <td>2020-09-09</td>
+      <td>암돼지 앞다리가 더 좋아요.</td>
+      <td>939*****</td>
+      <td>미박앞다리(암)</td>
+    </tr>
+    <tr>
+      <th>9993</th>
+      <td>100773</td>
+      <td>엑셀(Excel)/냉장/알목심/PR</td>
+      <td>만족도5.0</td>
+      <td>2020-09-09</td>
+      <td>이번 알목심 정말좋아요!</td>
+      <td>dom****</td>
+      <td>알목심</td>
+    </tr>
+    <tr>
+      <th>9994</th>
+      <td>100772</td>
+      <td>금천한돈/냉장/안심</td>
+      <td>만족도5.0</td>
+      <td>2020-09-09</td>
+      <td>감사합니다  ^^</td>
+      <td>gpf****</td>
+      <td>안심</td>
+    </tr>
+  </tbody>
+</table>
+<p>5412 rows × 7 columns</p>
+</div></div>
 
-
-
-
+## GROUPBY 메소드와 엑셀을 이용한 더미데이터 변환
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>부위</th>
+    </tr>
+    <tr>
+      <th>작성자</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>024******</th>
+      <td>{홍두깨, 삼겹(암), 우빽립, 삼겹양지}</td>
+    </tr>
+    <tr>
+      <th>029******</th>
+      <td>{양지머리외, 홍두깨, 채끝, 등심, 미박삼겹(암)}</td>
+    </tr>
+    <tr>
+      <th>073**</th>
+      <td>{미박뒷다리}</td>
+    </tr>
+    <tr>
+      <th>100********</th>
+      <td>{삼겹}</td>
+    </tr>
+    <tr>
+      <th>102*******</th>
+      <td>{사태}</td>
+    </tr>
+    <tr>
+      <th>126*</th>
+      <td>{목심, 삼겹살, 목살, 등심}</td>
+    </tr>
+    <tr>
+      <th>133*</th>
+      <td>{목심(암), 잡뼈, 사태, 앞다리살, 차돌박이, 미박삼겹(암)}</td>
+    </tr>
+    <tr>
+      <th>145*</th>
+      <td>{삼겹양지, 늑간살, 꼬리, LA갈비, 우목심}</td>
+    </tr>
+    <tr>
+      <th>151*******</th>
+      <td>{앞다리, 앞다리(암)}</td>
+    </tr>
+    <tr>
+      <th>158*****</th>
+      <td>{삼겹살}</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+![image](https://user-images.githubusercontent.com/71205453/109663424-6e99d280-7baf-11eb-93a3-4ccf98b9f901.png)
 
 <div class="output_subarea output_html rendered_html output_result" dir="auto"><div>
 <style scoped="">
