@@ -335,6 +335,8 @@ frequent_items.head()
 rules = association_rules(frequent_items, metric='confidence', min_threshold=0.6)
 rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].sort_values(by='lift', ascending=False)</code><pre>
 
+
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
