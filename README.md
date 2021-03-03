@@ -103,7 +103,7 @@ https://www.edaily.co.kr/news/read?newsid=01410406615800016
 <p>5412 rows × 7 columns</p>
 </div></div>
 
-## GROUPBY 메소드와 엑셀을 이용한 더미데이터 변환
+## 4. GROUPBY 메소드와 엑셀을 이용한 더미데이터 변환
 
 groupby 메소드를 이용해 작성자들의 구매 항목들을 합쳐 주었다.
 <pre><code>feel = df.groupby('작성자')['부위'].apply(set)
@@ -329,11 +329,22 @@ df_dummy.head()</code></pre>
 </table>
 <p>5 rows × 415 columns</p>
 
+## 5. 결과 및 해석
 <pre><code>from mlxtend.frequent_patterns import apriori, association_rules
 frequent_items = apriori(df_dummy, min_support=0.01, use_colnames=True)
 frequent_items.head()
 rules = association_rules(frequent_items, metric='confidence', min_threshold=0.6)
 rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].sort_values(by='lift', ascending=False)</code></pre>
+
+**지지도(support)란?**
+특정 품목에 대한 지지도는 전체 거래중에서   
+해당 품목을 포함하는 거래의 비율을 의미합니다.
+
+**신뢰도(confidence)란?**
+신뢰도(confidence)는 품목 A가 포함된 거래 중에서 품목 B가 포함될 확률을 의미합니다.
+
+**향상도(lift)란?**
+두 품목 (A 와 B)이 동시에 구매되는 확률과 후행조건(품목B)이 독립적으로 구매된 확률을 비해 봄으로써 도출된 규칙이 우연에 의해 나타난 것인지 실제 연광성이 존재하여 나타난 것인지를 판단하는 것입니다.
 
 <table border="1" class="dataframe">
   <thead>
