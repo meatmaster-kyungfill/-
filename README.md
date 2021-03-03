@@ -328,8 +328,13 @@ df_dummy.head()</code></pre>
   </tbody>
 </table>
 <p>5 rows × 415 columns</p>
-</div></div>
-<div class="output_subarea output_html rendered_html output_result" dir="auto"><div>
+
+<pre><code>from mlxtend.frequent_patterns import apriori, association_rules
+frequent_items = apriori(df_dummy, min_support=0.01, use_colnames=True)
+frequent_items.head()
+rules = association_rules(frequent_items, metric='confidence', min_threshold=0.6)
+rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].sort_values(by='lift', ascending=False)</code><pre>
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -440,5 +445,4 @@ df_dummy.head()</code></pre>
     </tr>
   </tbody>
 </table>
-</div></div>
 
