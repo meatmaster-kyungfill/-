@@ -32,7 +32,8 @@ https://www.edaily.co.kr/news/read?newsid=01410406615800016
 <div class="output_subarea output_html rendered_html output_result" dir="auto"><div>
 <p align="center"> 상위 50가지 부위만 나타낸 구매 후기</p>   
   
-  
+ 초기 데이테셋은 10000개의 데이테셋이었다.   
+ 상위 50가지 부위와 중복 데이터를 제외한 후 5000여개 가량의 데이테 셋이 되었다.
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -163,6 +164,11 @@ https://www.edaily.co.kr/news/read?newsid=01410406615800016
 </div></div>
 
 ## GROUPBY 메소드와 엑셀을 이용한 더미데이터 변환
+
+groupby 메소드를 이용해 작성자들의 구매 항목들을 합쳐 주었다.
+<pre><code>feel = df.groupby('작성자')['부위'].apply(set)
+df1 = pd.DataFrame(feel)
+df1.head(10)</code></pre>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -219,8 +225,170 @@ https://www.edaily.co.kr/news/read?newsid=01410406615800016
 </table>
 </div></div>
 
+엑셀을 이용해 1회성 이용자들의 구매이력을 제거해주고   
+장바구니분석에 쓰이는 알고리즘인 apriori알고리즘을 적용할 수 있도록 데이터셋 형태를 바꾸어 주었다. 
 ![image](https://user-images.githubusercontent.com/71205453/109664856-efa59980-7bb0-11eb-9c91-511c14fc3f76.png)
 
+
+각 항목간의 상관성을 파악하기 위해 행렬화(더미데이터화)하였다.
+
+<pre><code>
+df = df.iloc[:,1:]
+df_dummy = pd.get_dummies(df)
+df_dummy.head()</code></pre>
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>부위1_LA갈비</th>
+      <th>부위1_갈매기</th>
+      <th>부위1_갈비</th>
+      <th>부위1_꼬리</th>
+      <th>부위1_늑간살</th>
+      <th>부위1_등갈비</th>
+      <th>부위1_등뼈</th>
+      <th>부위1_등심</th>
+      <th>부위1_로인립</th>
+      <th>부위1_목살</th>
+      <th>...</th>
+      <th>부위14_미박뒷다리</th>
+      <th>부위14_부채살</th>
+      <th>부위14_앞다리(암)</th>
+      <th>부위14_항정</th>
+      <th>부위15_LA갈비</th>
+      <th>부위15_갈비</th>
+      <th>부위15_등갈비</th>
+      <th>부위15_등심</th>
+      <th>부위15_미박뒷다리</th>
+      <th>부위15_삼겹살(암)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 415 columns</p>
+</div></div>
 <div class="output_subarea output_html rendered_html output_result" dir="auto"><div>
 <table border="1" class="dataframe">
   <thead>
