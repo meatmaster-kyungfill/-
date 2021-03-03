@@ -462,3 +462,4 @@ rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].sort_valu
 
 
 **-해석-**
+![image](https://user-images.githubusercontent.com/71205453/109746344-96715080-7c18-11eb-9625-6adaeb8295f2.png)
