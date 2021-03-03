@@ -333,24 +333,7 @@ df_dummy.head()</code></pre>
 frequent_items = apriori(df_dummy, min_support=0.01, use_colnames=True)
 frequent_items.head()
 rules = association_rules(frequent_items, metric='confidence', min_threshold=0.6)
-rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].sort_values(by='lift', ascending=False)</code><pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].sort_values(by='lift', ascending=False)</code></pre>
 
 <table border="1" class="dataframe">
   <thead>
@@ -459,94 +442,6 @@ rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].sort_valu
       <td>0.019868</td>
       <td>0.600000</td>
       <td>20.133333</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>(부위1_미박삼겹(암), 부위3_삼겹(암))</td>
-      <td>(부위2_목심(암))</td>
-      <td>0.016556</td>
-      <td>1.000000</td>
-      <td>15.894737</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>(부위6_삼겹살)</td>
-      <td>(부위2_삼겹양지)</td>
-      <td>0.013245</td>
-      <td>0.666667</td>
-      <td>13.422222</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>(부위6_삼겹살)</td>
-      <td>(부위1_목살)</td>
-      <td>0.013245</td>
-      <td>0.666667</td>
-      <td>13.422222</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>(부위3_목심(암), 부위2_목심)</td>
-      <td>(부위1_미박삼겹(암))</td>
-      <td>0.019868</td>
-      <td>1.000000</td>
-      <td>10.413793</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>(부위3_목심(암), 부위1_미박삼겹(암))</td>
-      <td>(부위2_목심)</td>
-      <td>0.019868</td>
-      <td>0.857143</td>
-      <td>10.354286</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>(부위3_목심(암))</td>
-      <td>(부위1_미박삼겹(암))</td>
-      <td>0.023179</td>
-      <td>0.777778</td>
-      <td>8.099617</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>(부위3_목심(암))</td>
-      <td>(부위2_목심)</td>
-      <td>0.019868</td>
-      <td>0.666667</td>
-      <td>8.053333</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>(부위2_목심(암), 부위3_삼겹(암))</td>
-      <td>(부위1_미박삼겹(암))</td>
-      <td>0.016556</td>
-      <td>0.625000</td>
-      <td>6.508621</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>(부위7_앞다리살)</td>
-      <td>(부위1_목심)</td>
-      <td>0.016556</td>
-      <td>0.833333</td>
-      <td>5.719697</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>(부위2_목살)</td>
-      <td>(부위1_삼겹살)</td>
-      <td>0.029801</td>
-      <td>0.600000</td>
-      <td>5.490909</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>(부위4_등뼈)</td>
-      <td>(부위1_목심)</td>
-      <td>0.013245</td>
-      <td>0.666667</td>
-      <td>4.575758</td>
     </tr>
   </tbody>
 </table>
