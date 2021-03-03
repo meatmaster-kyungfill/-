@@ -330,6 +330,8 @@ df_dummy.head()</code></pre>
 <p>5 rows × 415 columns</p>
 
 ## 5. 결과
+
+
 <pre><code>from mlxtend.frequent_patterns import apriori, association_rules
 frequent_items = apriori(df_dummy, min_support=0.01, use_colnames=True)
 frequent_items.head()
@@ -459,7 +461,9 @@ rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].sort_valu
 </div></div>
 
 
-## 6. 결과  
+## 6. 해석  
+
+
 
 ![image](https://user-images.githubusercontent.com/71205453/109746344-96715080-7c18-11eb-9625-6adaeb8295f2.png)
 
