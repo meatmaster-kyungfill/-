@@ -329,14 +329,12 @@ df_dummy.head()</code></pre>
 </table>
 <p>5 rows × 415 columns</p>
 
-## 5. 결과 및 해석
+## 5. 결과
 <pre><code>from mlxtend.frequent_patterns import apriori, association_rules
 frequent_items = apriori(df_dummy, min_support=0.01, use_colnames=True)
 frequent_items.head()
 rules = association_rules(frequent_items, metric='confidence', min_threshold=0.6)
 rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].sort_values(by='lift', ascending=False)</code></pre>
-
-**-결과-**
 
 **지지도(support)란?**   
 특정 품목에 대한 지지도는 전체 거래중에서   
@@ -461,7 +459,7 @@ rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].sort_valu
 </div></div>
 
 
-**-해석-**   
+## 6. 결과  
 
 ![image](https://user-images.githubusercontent.com/71205453/109746344-96715080-7c18-11eb-9625-6adaeb8295f2.png)
 
