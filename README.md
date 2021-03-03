@@ -333,8 +333,9 @@ df_dummy.head()</code></pre>
 frequent_items = apriori(df_dummy, min_support=0.01, use_colnames=True)
 frequent_items.head()
 rules = association_rules(frequent_items, metric='confidence', min_threshold=0.6)
-rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].sort_values(by='lift', ascending=False)   
-</code><pre>
+rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].sort_values(by='lift', ascending=False)</code><pre>
+
+
 
 
 
